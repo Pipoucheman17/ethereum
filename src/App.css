@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+/*Home Page style*/
+
+.titleSection{
+  background-color: #3171f3;
+  height: 3em;
+  width: 100%;
+  margin:auto;
+  text-align: center;
+  padding: 1em 0em 0em 0em;
+  font-size: 3em;
+  
+}
+
+.buttonConf{
+  height: 5em;
+  width: 40em;
+  margin: 5em 2em;
+  font: 1.2em bold Helvetica, arial;
+}
+
+
