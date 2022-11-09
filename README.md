@@ -29,4 +29,4 @@ Aller à la page pour regarder la collection actuel (avec la possibilité de les
 # En quoi la blockchain est importante sur ce projet: 
 La blockchain est importante pour ce projet car elle permet d’effectuer des transactions en ligne, tout en ayant la traçabilité de ses transactions. Le NFT (Non-Fongible Token) porte donc bien son nom, la personne possédant un NFT devient le propriétaire unique. Le propriétaire du NFT obtiendra un token unique de l'œuvre qu’il a acheté, et toute autre personne voulant utiliser son NFT devra respecter la propriété intellectuelle.
 
-# Pour toutes question concernant le fonctionnement : benjamin.levaltier@edu.ece.fr
+# Pour toute question concernant le fonctionnement : benjamin.levaltier@edu.ece.fr
