@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 ## Levaltier Benjamin
 ## Arnaud Naoki
 ## Rakotoson Tanjona
+=======
+##Levaltier Benjamin
+##Arnaud Naoki
+##Rakotoson Tanjona
+>>>>>>> c73057eb7bf48630f9511e52fdf4c13c156775a4
 
 # Les instructions pour lancer l’app:
 Clone le repo
