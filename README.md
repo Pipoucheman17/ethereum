@@ -1,6 +1,6 @@
-Levaltier Benjamin
-Arnaud Naoki
-Rakotoson Tanjona
+##Levaltier Benjamin
+##Arnaud Naoki
+##Rakotoson Tanjona
 
 #Les instructions pour lancer l’app:
 Clone le repo
