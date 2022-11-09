@@ -46,12 +46,14 @@ class App extends React.Component {
           let nft = await nftContract.pictures(parseInt(listNft[i], 16));
           console.log(parseInt(listNft[i]._hex, 16))
           console.log(nft)
-          let price = 
+          console.log(this.NFT(nft._hex))
           tablecontent.push(<div>
             <ul>
               <li>Nom : {nft.name}</li>
-              <li>Prix :{parseInt(nft.price._hex,16)}</li>
+              <li>Prix :{parseInt(nft.price._hex, 16)}</li>
               <li>Description : {nft.description}</li>
+              {this.NFT()}
+              <li><button onClick={() => this.sellNFT(nft[2])} className="btn btn-secondary">Sell</button></li>
             </ul>
           </div>
 
@@ -65,6 +67,21 @@ class App extends React.Component {
     }
     catch (err) {
       console.log(err)
+    }
+  }
+
+
+  sellNFT = (tokenId) => {
+    const { ethereum } = window;
+    console.log("efef")
+    if (ethereum) {
+      const provider = new ethers.providers.Web3Provider(ethereum);
+      const signer = provider.getSigner();
+      const nftContract = new ethers.Contract(this.state.contractAddress, abi, signer);
+
+      nftContract.sellNFT(tokenId)
+
+      console.log("Selling...")
     }
   }
 
@@ -83,17 +100,18 @@ class App extends React.Component {
   }
 
   NFT = (num) => {
+    num = parseInt(num, 16)
     if (num === 1) {
-      return nft1
+      return <li><img src={nft1} alt="No nft"></img></li>
     }
     else if (num === 2) {
-      return nft2
+      return <li><img src={nft2} alt="No nft"></img></li>
     }
     else if (num === 3) {
-      return nft3
+      return <li><img src={nft3} alt="No nft"></img></li>
     }
     else if (num === 4) {
-      return nft4
+      return <li><img src={nft4} alt="No nft"></img></li>
     }
   }
 
@@ -180,30 +198,31 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div >
         <header>
           <h1 className="titleSection">Welcome to our NFT marketplace</h1>
 
         </header>
-        <div>
-          <h1>TP ECE</h1>
+        <div className="container">
+          <br></br>
           <div className="row">
-            <div className="col-1">
+            <div className="col-5">
               {this.connectWalletButton()}
             </div>
-            <div className="col-1">
+            <div className="col-5">
               {this.mintNftButton()}
             </div>
           </div>
 
-          <section>
+          <section className="container">
             <h2>Buy Section</h2>
-            <div><img src={nft4} />
-              <button onClick={() => this.buyNFT(1)}>Buy</button></div>
+            <div><img src={nft4} width="300" />
+            
+              <button onClick={() => this.buyNFT( "0x01")} className="btn btn-primary btn-lg m-5">Buy</button></div>
           </section>
           <section>
             <h2>Your Collection Section</h2>
-            <Button onClick={() => this.displayNFT()}>Clique pour afficher ta collection de NFT</Button>
+            <Button onClick={() => this.displayNFT()} type="button" variant="primary">Clique pour afficher ta collection de NFT</Button>
             <br></br>
             {this.state.collection}
           </section>
