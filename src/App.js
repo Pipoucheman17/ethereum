@@ -24,9 +24,6 @@ class App extends React.Component {
     }
   }
 
-  displayBuyNFT = async () => {
-
-  }
   displayNFT = async () => {
 
     const { ethereum } = window;
@@ -52,7 +49,8 @@ class App extends React.Component {
           let price = 
           tablecontent.push(<div>
             <ul>
-              <li>Prix :{nft.price._hex}</li>
+              <li>Nom : {nft.name}</li>
+              <li>Prix :{parseInt(nft.price._hex,16)}</li>
               <li>Description : {nft.description}</li>
             </ul>
           </div>
